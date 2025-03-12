@@ -1,9 +1,8 @@
 package com.eyvot.pokeapi.core.contracts.api;
 
-import com.eyvot.pokeapi.core.dto.api.PokemonDetailsResponse;
-import com.eyvot.pokeapi.core.dto.api.PokemonItemResponse;
+import com.eyvot.pokeapi.core.dto.api.PokemonListResponse;
+import com.eyvot.pokeapi.core.dto.api.PokemonDetailedResponse;
 
-import java.util.List;
 
 /**
  * Defines the contract for the API that exposes Pokémon data
@@ -16,17 +15,17 @@ public interface PokemonApiContract {
      * Retrieves a list of Pokémon with basic details.
      * The data is formatted specifically for API consumers.
      *
-     * @return A list of Pokémon.
+     * @return A basic list of Pokémon.
      */
-    List<PokemonItemResponse> getPokemonList();
+    PokemonListResponse getPokemonList();
 
     /**
      * Retrieves detailed information about a specific Pokémon,
      * including species details and evolution chain.
      *
-     * @param id The ID of the Pokémon.
-     * @return A detailed Pokémon response combining multiple data sources.
+     * @param id The id of the Pokémon.
+     * @return A detailed Pokémon response.
      */
-    PokemonDetailsResponse getPokemonDetails(int id);
+    PokemonDetailedResponse getPokemonDetails(int id);
 
 }

@@ -10,6 +10,11 @@ public final class Constants {
     public static final String POKE_API_POKEMON_EVOLUTION_CHAIN_PATH = "/evolution-chain/{id}";
     public static final String POKE_API_OFFSET_PARAM = "offset";
     public static final String POKE_API_LIMIT_PARAM = "limit";
+    public static final String POKE_API_NO_POKEMON_DESCRIPTION_TEXT = "No description available.";
+    public static final String POKE_API_DEFAULT_LANGUAGE = "en";
+    public static final String POKE_API_FORMATTER_DELIMITER = ", ";
+    public static final String POKE_API_FORMATTER_EVOLUTION_PATH_SEPARATOR = " → ";
+    public static final int POKE_API_POKEMON_NUMBER_PER_PAGE = 2;
 
 
     private Constants() {}
