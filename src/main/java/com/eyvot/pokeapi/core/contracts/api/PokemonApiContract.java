@@ -17,7 +17,7 @@ public interface PokemonApiContract {
      *
      * @return A basic list of Pokémon.
      */
-    PokemonListResponse getPokemonList();
+    PokemonListResponse getPokemonList(int page);
 
     /**
      * Retrieves detailed information about a specific Pokémon,
