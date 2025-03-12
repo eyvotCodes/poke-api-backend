@@ -2,7 +2,7 @@ package com.eyvot.pokeapi.core.contracts.service;
 
 import com.eyvot.pokeapi.core.dto.pokeapi.EvolutionChainPokeapiResponse;
 import com.eyvot.pokeapi.core.dto.pokeapi.PokemonDetailsPokeapiResponse;
-import com.eyvot.pokeapi.core.dto.pokeapi.PokemonItemPokeapiResponse;
+import com.eyvot.pokeapi.core.dto.pokeapi.PokemonListPokeapiResponse;
 import com.eyvot.pokeapi.core.dto.pokeapi.SpeciesPokeapiResponse;
 
 import java.util.List;
@@ -20,7 +20,7 @@ public interface PokeapiServiceContract {
      * @param limit  The number of Pokémon to retrieve.
      * @return A list of Pokémon with basic details.
      */
-    List<PokemonItemPokeapiResponse> getPokemonList(int offset, int limit);
+    PokemonListPokeapiResponse getPokemonList(int offset, int limit);
 
     /**
      * Retrieves detailed information about a specific Pokémon.
