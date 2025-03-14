@@ -6,6 +6,7 @@ import com.eyvot.pokeapi.core.dto.pokeapi.EvolutionChainPokeapiResponse;
 import com.eyvot.pokeapi.core.dto.pokeapi.PokemonDetailsPokeapiResponse;
 import com.eyvot.pokeapi.core.dto.pokeapi.PokemonListPokeapiResponse;
 import com.eyvot.pokeapi.core.dto.pokeapi.SpeciesPokeapiResponse;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -22,6 +23,7 @@ public class PokeapiService implements PokeapiServiceContract {
 
 
     @Override
+    @Cacheable(value = Constants.CACHE_POKEAPI_SCOPE, key = "'list_' + #offset + '_' + #limit")
     public PokemonListPokeapiResponse getPokemonList(int offset, int limit) {
         return webClient.get()
                 .uri(uriBuilder -> uriBuilder
@@ -35,6 +37,7 @@ public class PokeapiService implements PokeapiServiceContract {
     }
 
     @Override
+    @Cacheable(value = Constants.CACHE_POKEAPI_SCOPE, key = "#id")
     public PokemonDetailsPokeapiResponse getPokemonDetails(int id) {
         return webClient.get()
                 .uri(Constants.POKE_API_POKEMON_DETAILS_PATH, id)
@@ -44,6 +47,7 @@ public class PokeapiService implements PokeapiServiceContract {
     }
 
     @Override
+    @Cacheable(value = Constants.CACHE_POKEAPI_SCOPE, key = "'species_' + #id")
     public SpeciesPokeapiResponse getPokemonSpecies(int id) {
         return webClient.get()
                 .uri(Constants.POKE_API_POKEMON_SPECIES_PATH, id)
@@ -53,6 +57,7 @@ public class PokeapiService implements PokeapiServiceContract {
     }
 
     @Override
+    @Cacheable(value = Constants.CACHE_POKEAPI_SCOPE, key = "'evolution_' + #id")
     public EvolutionChainPokeapiResponse getPokemonEvolutionChain(int id) {
         return webClient.get()
                 .uri(Constants.POKE_API_POKEMON_EVOLUTION_CHAIN_PATH, id)

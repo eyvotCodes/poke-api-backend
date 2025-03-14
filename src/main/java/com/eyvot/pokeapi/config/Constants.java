@@ -29,6 +29,12 @@ public final class Constants {
             "http://localhost:5173" // Vite development server
     );
 
+    // Cache
+    public static final String CACHE_POKEAPI_SCOPE = "pokeapi";
+    public static final int CACHE_EXPIRE_MINUTES_AFTER_WRITE = 10;
+    public static final int CACHE_EXPIRE_MINUTES_AFTER_READ = 15;
+    public static final int CACHE_ENTRY_LIMIT = 1000;
+
 
     private Constants() {}
 
