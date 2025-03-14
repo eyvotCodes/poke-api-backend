@@ -1,5 +1,8 @@
 package com.eyvot.pokeapi.config;
 
+import java.util.List;
+
+
 public final class Constants {
 
     // PokeAPI
@@ -14,7 +17,17 @@ public final class Constants {
     public static final String POKE_API_DEFAULT_LANGUAGE = "en";
     public static final String POKE_API_FORMATTER_DELIMITER = ", ";
     public static final String POKE_API_FORMATTER_EVOLUTION_PATH_SEPARATOR = " → ";
-    public static final int POKE_API_POKEMON_NUMBER_PER_PAGE = 2;
+    public static final int POKE_API_POKEMON_NUMBER_PER_PAGE = 14;
+
+    // WebClient
+    public static final int WEBCLIENT_MAX_BUFFER_SIZE = 2 * 1024 * 1024; // 2 mb
+
+    // CORS
+    public static final List<String> ALLOWED_METHODS = List.of("GET");
+    public static final List<String> ALLOWED_HEADERS = List.of("Content-Type", "Authorization", "Accept");
+    public static final List<String> ALLOWED_ORIGINS = List.of(
+            "http://localhost:5173" // Vite development server
+    );
 
 
     private Constants() {}
