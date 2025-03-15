@@ -26,7 +26,9 @@ public final class Constants {
     public static final List<String> ALLOWED_METHODS = List.of("GET");
     public static final List<String> ALLOWED_HEADERS = List.of("Content-Type", "Authorization", "Accept");
     public static final List<String> ALLOWED_ORIGINS = List.of(
-            "http://localhost:5173" // Vite development server
+            "http://localhost:5173", // Vite development server
+            "http://localhost:4173", // Vite preview server
+            "https://pokeapi.eyvot.com" // Front-end
     );
 
     // Cache
