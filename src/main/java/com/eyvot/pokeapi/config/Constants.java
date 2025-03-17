@@ -5,6 +5,11 @@ import java.util.List;
 
 public final class Constants {
 
+    // Dev Environment
+    public static final String ENV_DEVELOPMENT = "development";
+    public static final String ENV_PRODUCTION = "production";
+    public static final String ENVIRONMENT = ENV_DEVELOPMENT; // update this to change development environment
+
     // PokeAPI
     public static final String POKE_API_BASE_URL = "https://pokeapi.co/api/v2";
     public static final String POKE_API_POKEMON_LIST_PATH = "/pokemon";
