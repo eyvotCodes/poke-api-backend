@@ -7,6 +7,7 @@ import java.util.List;
 public class SpeciesPokeapiResponse {
 
     private int id;
+    private EvolutionChain evolution_chain;
     private List<FlavorTextEntries> flavor_text_entries;
 
 
@@ -14,7 +15,21 @@ public class SpeciesPokeapiResponse {
         return id;
     }
 
+    public EvolutionChain getEvolution_chain() {
+        return evolution_chain;
+    }
+
     public List<FlavorTextEntries> getFlavor_text_entries() {
         return flavor_text_entries;
     }
+
+
+    public class EvolutionChain {
+        private String url;
+
+        public String getUrl() {
+            return url;
+        }
+    }
+
 }

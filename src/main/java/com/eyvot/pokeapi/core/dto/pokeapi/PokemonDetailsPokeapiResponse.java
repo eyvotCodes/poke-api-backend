@@ -1,6 +1,7 @@
 package com.eyvot.pokeapi.core.dto.pokeapi;
 
 import com.eyvot.pokeapi.core.dto.pokeapi.type.Abilities;
+import com.eyvot.pokeapi.core.dto.pokeapi.type.Species;
 import com.eyvot.pokeapi.core.dto.pokeapi.type.Sprites;
 import com.eyvot.pokeapi.core.dto.pokeapi.type.Types;
 
@@ -12,6 +13,7 @@ public class PokemonDetailsPokeapiResponse {
     private String name;
     private int weight;
     private Sprites sprites;
+    private Species species;
     private List<Types> types;
     private List<Abilities> abilities;
 
@@ -32,6 +34,10 @@ public class PokemonDetailsPokeapiResponse {
         return sprites;
     }
 
+    public Species getSpecies() {
+        return species;
+    }
+
     public List<Types> getTypes() {
         return types;
     }
@@ -39,4 +45,5 @@ public class PokemonDetailsPokeapiResponse {
     public List<Abilities> getAbilities() {
         return abilities;
     }
+
 }

@@ -73,21 +73,23 @@ public class PokemonFormatterService {
     public PokemonDetailedResponse getPokemonDetails(int id) {
         PokemonDetailsPokeapiResponse details = pokeapiService.getPokemonDetails(id);
         SpeciesPokeapiResponse species = pokeapiService.getPokemonSpecies(id);
-        EvolutionChainPokeapiResponse evolutionChain = pokeapiService.getPokemonEvolutionChain(id);
+        int evolutionChainId = extractIdFromUrl(species.getEvolution_chain().getUrl());
+        EvolutionChainPokeapiResponse evolutionChain = pokeapiService.getPokemonEvolutionChain(evolutionChainId);
         return PokemonMapper.toPokemonDetailedResponse(details, species, evolutionChain);
     }
 
     /**
-     * Extracts the Pokémon ID from a given PokéAPI resource URL.
+     * Extracts the ID from a given PokéAPI resource URL.
      *
      * This method assumes the URL follows the standard PokéAPI format, where
      * the last segment represents the ID.
      *
      * Example:
      * Given "https://pokeapi.co/api/v2/pokemon/25/", this method returns 25.
+     * Given "https://pokeapi.co/api/v2/pokemon-species/3/", this method returns 3.
      *
-     * @param url The URL from which to extract the Pokémon ID.
-     * @return The extracted Pokémon ID as an integer.
+     * @param url The URL from which to extract the ID.
+     * @return The extracted ID as an integer.
      */
     private int extractIdFromUrl(String url) {
         String[] parts = url.split("/");
