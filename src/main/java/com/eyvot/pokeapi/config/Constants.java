@@ -22,7 +22,7 @@ public final class Constants {
     public static final String POKE_API_DEFAULT_LANGUAGE = "en";
     public static final String POKE_API_FORMATTER_DELIMITER = ", ";
     public static final String POKE_API_FORMATTER_EVOLUTION_PATH_SEPARATOR = " → ";
-    public static final int POKE_API_POKEMON_NUMBER_PER_PAGE = 14;
+    public static final int POKE_API_POKEMON_NUMBER_PER_PAGE = 15;
 
     // WebClient
     public static final int WEBCLIENT_MAX_BUFFER_SIZE = 2 * 1024 * 1024; // 2 mb

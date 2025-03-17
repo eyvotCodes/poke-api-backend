@@ -51,7 +51,11 @@ public class PokemonFormatterService {
                         )
                 ))
                 .toList();
-        return new PokemonListResponse(formattedList);
+
+
+        int numberOfPages = (pokemonList.getCount() / Constants.POKE_API_POKEMON_NUMBER_PER_PAGE)
+                + (pokemonList.getCount() % Constants.POKE_API_POKEMON_NUMBER_PER_PAGE == 0 ? 0 : 1);
+        return new PokemonListResponse(numberOfPages, formattedList);
     }
 
     /**
