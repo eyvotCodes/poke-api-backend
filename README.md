@@ -7,7 +7,7 @@ La documentación de la práctica se encuentra en el directorio `/docs` de este 
 ### Requirements
 
 - Java 21
-- Spring Boot 4.3.4
+- Spring Boot 3.4.3
 - Maven
 
 ### Setup
