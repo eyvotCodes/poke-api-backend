@@ -62,11 +62,16 @@ El siguiente diagrama describe de forma básica:
 ~~~mermaid
 graph TD;
     front[Frontend] <--> api[REST API];
-    api <--> back[Backend];
-    back --> poke[PokéAPI];
-    poke --> fmt[Formatter];
-    fmt --> back;
-    api <--> cache[Cache];
+    subgraph Infrastructure A
+        api --> cache[Cache];
+    end
+    subgraph Core
+        fmt[Formatter] --> api;
+    end
+    subgraph Infrastructure B
+        cache <--> poke[PokéAPI]; 
+    end
+    cache --> fmt;
 ~~~
 
 Ejemplos de formateo de datos de PokéAPI:
